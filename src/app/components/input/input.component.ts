@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import {Tarefa} from '../../models/Tarefa'
+import {TarefaService} from '../../services/tarefa.service'
+
 
 @Component({
   selector: 'app-input',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputComponent implements OnInit {
 
-  constructor() { }
+  tarefaInput:string = ""
+
+  onSubmit() {
+    var tarefa:Tarefa = {
+      checked: false,
+      prioridade: 1,
+      conteudo: this.tarefaInput
+    }
+
+    var service = new TarefaService()
+    service.addTarefa(tarefa)
+
+  }
+
+ constructor() {
+  }
 
   ngOnInit(): void {
+
   }
 
 }

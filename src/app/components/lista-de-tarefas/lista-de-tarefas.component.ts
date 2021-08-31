@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Tarefa} from '../../models/Tarefa'
+import { TarefaService } from 'src/app/services/tarefa.service';
 
 @Component({
   selector: 'app-lista-de-tarefas',
@@ -7,26 +8,13 @@ import {Tarefa} from '../../models/Tarefa'
   styleUrls: ['./lista-de-tarefas.component.css']
 })
 export class ListaDeTarefasComponent implements OnInit {
-  tarefas:Tarefa[] = [
-    {
-      checked: false,
-      prioridade: 3,
-      conteudo: "Estudar Angular"
-    },
-    {
-      checked: false,
-      prioridade: 2,
-      conteudo: "Lavar louça"
-    },
-    {
-      checked: false,
-      prioridade: 1,
-      conteudo: "Comprar pão"
-    }
-  ];
+  public tarefas:Tarefa[];
+  tarefa_service:TarefaService = new TarefaService();
 
 
-  constructor() { }
+  constructor() {
+    this.tarefas = this.tarefa_service.getTarefas();
+  }
 
   ngOnInit(): void {
   }
