@@ -1,9 +1,11 @@
-<td>
-  <input type="checkbox">
-</td>
-<td>
-  {{registro.conteudo}}
-</td>
-<td>
-  <i class="material-icons">delete</i>
-</td>
+<tr>
+  <td>
+    <input type="checkbox" [(ngModel)]="registro.checked">
+  </td>
+  <td [class.done]="registro.checked">
+    {{registro.conteudo}}
+  </td>
+  <td>
+    <i class="material-icons">delete</i>
+  </td>
+</tr>

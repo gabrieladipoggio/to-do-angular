@@ -1,7 +1,6 @@
 import { Component, OnInit} from '@angular/core';
-import {Tarefa} from '../../models/Tarefa'
-import {TarefaService} from '../../services/tarefa.service'
-
+import { Tarefa } from '../../models/Tarefa'
+import { TarefaService } from '../../services/tarefa.service'
 
 @Component({
   selector: 'app-input',

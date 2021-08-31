@@ -5,19 +5,19 @@ import { Tarefa } from '../../app/models/Tarefa';
   providedIn: 'root'
 })
 export class TarefaService {
-  list_of_tasks: Tarefa[];
+  lista_de_tarefas: Tarefa[];
 
   constructor() {
-    this.list_of_tasks = [
-      {checked: true, prioridade: 1, conteudo: "To love gabi"},
+    this.lista_de_tarefas = [
+      {checked: false, prioridade: 1, conteudo: "Estudar Angular"},
     ]
   }
 
   getTarefas():Tarefa[]{
-    return this.list_of_tasks
+    return this.lista_de_tarefas
   }
 
   addTarefa(t:Tarefa):void{
-    this.list_of_tasks.push(t)
+    this.lista_de_tarefas.push(t)
   }
 }

@@ -9,7 +9,9 @@ import {Tarefa} from '../../models/Tarefa'
 export class TarefaComponent implements OnInit {
   @Input() registro!:Tarefa;
 
-  constructor() { }
+  constructor() {
+
+   }
 
   ngOnInit(): void {
   }

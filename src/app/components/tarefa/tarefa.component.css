@@ -28,7 +28,7 @@ td:nth-child(4){
 	width: 36px;
 }
 
-tr.done td:nth-child(2){
+.done {
 	text-decoration: line-through;
 }
 
