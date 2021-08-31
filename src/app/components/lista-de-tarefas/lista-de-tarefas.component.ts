@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Tarefa} from '../../models/Tarefa'
+import { Tarefa } from '../../models/Tarefa'
 import { TarefaService } from 'src/app/services/tarefa.service';
 
 @Component({
@@ -8,12 +8,10 @@ import { TarefaService } from 'src/app/services/tarefa.service';
   styleUrls: ['./lista-de-tarefas.component.css']
 })
 export class ListaDeTarefasComponent implements OnInit {
-  public tarefas:Tarefa[];
-  tarefa_service:TarefaService = new TarefaService();
+  tarefas:Tarefa[];
 
-
-  constructor() {
-    this.tarefas = this.tarefa_service.getTarefas();
+  constructor(s: TarefaService) {
+    this.tarefas = s.getTarefas();
   }
 
   ngOnInit(): void {

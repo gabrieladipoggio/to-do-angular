@@ -9,7 +9,7 @@ import {TarefaService} from '../../services/tarefa.service'
   styleUrls: ['./input.component.css']
 })
 export class InputComponent implements OnInit {
-
+  service:TarefaService
   tarefaInput:string = ""
 
   onSubmit() {
@@ -18,13 +18,11 @@ export class InputComponent implements OnInit {
       prioridade: 1,
       conteudo: this.tarefaInput
     }
-
-    var service = new TarefaService()
-    service.addTarefa(tarefa)
-
+   this.service.addTarefa(tarefa)
   }
 
- constructor() {
+  constructor(s: TarefaService) {
+    this.service = s
   }
 
   ngOnInit(): void {

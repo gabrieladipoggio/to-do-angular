@@ -1,36 +1,23 @@
 import { Injectable } from '@angular/core';
-import {Tarefa} from '../../app/models/Tarefa'
-
-const LISTA_DE_TAREFAS:Tarefa[] = [
-  {
-    checked: false,
-    prioridade: 3,
-    conteudo: "Estudar Angular"
-  },
-  {
-    checked: false,
-    prioridade: 2,
-    conteudo: "Lavar louça"
-  },
-  {
-    checked: false,
-    prioridade: 1,
-    conteudo: "Comprar pão"
-  }
-]
+import { Tarefa } from '../../app/models/Tarefa';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TarefaService {
+  list_of_tasks: Tarefa[];
 
-  constructor() { }
+  constructor() {
+    this.list_of_tasks = [
+      {checked: true, prioridade: 1, conteudo: "To love gabi"},
+    ]
+  }
 
   getTarefas():Tarefa[]{
-    return LISTA_DE_TAREFAS
+    return this.list_of_tasks
   }
 
   addTarefa(t:Tarefa):void{
-    LISTA_DE_TAREFAS.push(t)
+    this.list_of_tasks.push(t)
   }
 }
