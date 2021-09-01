@@ -11,17 +11,17 @@ export class InputComponent implements OnInit {
   service:TarefaService
   tarefaInput:string = ""
 
-  onSubmit() {
+  constructor(s: TarefaService) {
+    this.service = s
+  }
+
+  addTarefa() {
     var tarefa:Tarefa = {
       checked: false,
       prioridade: 1,
       conteudo: this.tarefaInput
     }
    this.service.addTarefa(tarefa)
-  }
-
-  constructor(s: TarefaService) {
-    this.service = s
   }
 
   ngOnInit(): void {
